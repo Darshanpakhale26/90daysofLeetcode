@@ -4,6 +4,9 @@
 #include <vector>
 using namespace std;
 
+//----------------Brute Force----------------
+
+
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     int i = m-1, j = n-1, k = m+n-1;
     while(i >= 0 && j >= 0) {
@@ -28,3 +31,5 @@ int main() {
     cout << endl;
     return 0;
 }
+
+

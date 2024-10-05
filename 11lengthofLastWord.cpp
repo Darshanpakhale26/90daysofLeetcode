@@ -1,7 +1,6 @@
 // Length of Last Word
 
 
-
 #include <iostream>
 #include <string>
 using namespace std;
@@ -22,7 +21,7 @@ int lengthOfLastWord(string s) {
 }
 
 int main() {
-    string s = "Hello World";
+    string s =  "   fly me   to   the moon  ";
     cout << lengthOfLastWord(s) << endl;
     return 0;
 }

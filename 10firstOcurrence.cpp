@@ -15,7 +15,7 @@ int firstOccurrence(string s, string x) {
             }
         }
         if(j == m) {
-            return i;
+            return i;1
         }
     }
     return -1;

@@ -9,15 +9,15 @@ using namespace std;
 string removeDuplicates(string S) {
     stack<char> stack;
     for(char c : S) {
-        if(!stack.empty() && stack.top() == c) {
+        if(!stack.empty() && stack.top() == c) { // if stack is not empty and top of stack is equal to current character  
             stack.pop();
         } else {
             stack.push(c);
         }
     }
     string result = "";
-    while(!stack.empty()) {
-        result = stack.top() + result;
+    while(!stack.empty()) {  // pop all elements from stack and add to result
+        result = stack.top() + result;   // add to front of result
         stack.pop();
     }
     return result;

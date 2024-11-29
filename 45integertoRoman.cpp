@@ -17,3 +17,10 @@ string intToRoman(int num) {
     }
     return res;
 }
+
+int main() {
+    int num = 58;
+    string res = intToRoman(num);
+    cout << res << endl;
+    return 0;
+}

@@ -34,4 +34,4 @@ int main() {
     cout << sol.isPrefixOfWord("this problem is an easy problem", "pro") << endl;
     cout << sol.isPrefixOfWord("i am tired", "you") << endl;
     return 0;
-}
+}6

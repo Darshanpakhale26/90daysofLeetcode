@@ -17,13 +17,32 @@
 
 using namespace std;
 
+// double minAverage(vector<int>& nums) {
+//     vector<double> averages;
+//     sort(nums.begin(), nums.end());
+//     for(int i = 0; i < nums.size() / 2; i++) {
+//         averages.push_back((nums[i] + nums[nums.size() - 1 - i]) / 2.0);
+//     }
+//     return *min_element(averages.begin(), averages.end());
+// }
+
 double minAverage(vector<int>& nums) {
     vector<double> averages;
-    sort(nums.begin(), nums.end());
-    for(int i = 0; i < nums.size() / 2; i++) {
-        averages.push_back((nums[i] + nums[nums.size() - 1 - i]) / 2.0);
+    sort(nums.begin(), nums.end()); 
+
+    int left = 0;
+    int right = nums.size() - 1;
+
+    while (left < right) {
+        int minElement = nums[left++];
+        int maxElement = nums[right--];
+        double avg = (minElement + maxElement) / 2.0;
+        averages.push_back(avg);
     }
-    return *min_element(averages.begin(), averages.end());
+
+   
+    double minAvg = *min_element(averages.begin(), averages.end());
+    return minAvg;
 }
 
 int main() {

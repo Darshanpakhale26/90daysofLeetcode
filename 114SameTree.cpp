@@ -1,7 +1,6 @@
 // Check Whether Two Trees are Same
 
 
-
 #include <iostream>
 using namespace std;
 

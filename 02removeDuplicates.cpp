@@ -31,22 +31,41 @@ using namespace std;
 
 //----------------- Using Set
 
-int removeDuplicates(vector<int>& nums) {
+// int removeDuplicates(vector<int>& nums) {
 
-   set<int> s;
-         for(int i=0; i<nums.size(); i++){
-            s.insert(nums[i]);
+//    set<int> s;
+//          for(int i=0; i<nums.size(); i++){
+//             s.insert(nums[i]);
+//         }
+//         nums.clear(); 
+        
+//         for(auto i: s){
+//             nums.push_back(i);
+//         }
+//         return nums.size();
+//
+// ------------------ Display Array of Unique Elementsvec
+
+int removeDuplicates(vector<int>& nums) {
+    int uniqueCount = 1; // First element is always unique
+
+    for(int i=1; i<nums.size(); i++){
+        if(nums[i]!=nums[i-1]){
+            nums[uniqueCount] = nums[i];
+            uniqueCount++;
         }
-        nums.clear();
-        for(auto i: s){
-            nums.push_back(i);
-        }
-        return nums.size();
+    }
+    return uniqueCount;
 }
 int main(){
     vector<int> nums = {1,1,2};
     int res = removeDuplicates(nums);
-    cout<<res;
+    cout << "Number of unique elements: " << res << endl;
+    cout << "Unique elements: ";
+    for (int i = 0; i < res; i++) {
+        cout << nums[i] << " ";
+    }
+    cout << endl;
     return 0;
 }
 

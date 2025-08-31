@@ -5,34 +5,35 @@
 #include <vector>
 using namespace std;
 
-//----------------- Brute Force Approach
+//----------------- Brute Force Approach-----
 
-int removeElement(vector<int>& nums, int val) {
-        int i=0;
-        for(int j=0; j<nums.size(); j++){
-            if(nums[j]!=val){
-                nums[i] = nums[j];
-                i++;
-            }
+void removeElement(vector<int>& nums, int val) {
+    int i = 0;
+    for (int j = 0; j < nums.size(); j++) {
+        if (nums[j] != val) {
+            nums[i] = nums[j];
+            i++;
         }
-        return i;
     }
+    nums.resize(i);
+}
 
-int main(){
+
+int main() {
     vector<int> nums = {3,2,2,3};
     int val = 3;
-    int res = removeElement(nums, val);
-    cout<<res;
+    removeElement(nums, val);
+
+    for (int num : nums) {
+        cout << num << " ";
+    }
+    cout << endl;
+
     return 0;
 }
 
 
-//----------------- Optimized Approach
 
-int removeElement(vector<int>& nums, int val) {
-        nums.erase(remove(nums.begin(), nums.end(), val), nums.end());
-        return nums.size();
-    }
 
 
 

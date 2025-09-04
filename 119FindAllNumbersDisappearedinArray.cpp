@@ -7,13 +7,34 @@ using namespace std;
 
 vector<int> findDisappearedNumbers(vector<int> &nums)
 {
+    // vector<int> result;
+    // sort(nums.begin(), nums.end());
+    // for (int i = 1; i <= nums.size(); ++i)
+    // {
+    //     if (find(nums.begin(), nums.end(), i) == nums.end()) // If i is not found in the array
+    //     {
+    //         result.push_back(i);
+    //     }
+    // }
+    // return result;
+
+
+    // Optimized Approach
+
     vector<int> result;
-    sort(nums.begin(), nums.end());
-    for (int i = 1; i <= nums.size(); ++i)
+    for (int i = 0; i < nums.size(); ++i)
     {
-        if (find(nums.begin(), nums.end(), i) == nums.end()) // If i is not found in the array
+        int index = abs(nums[i]) - 1;
+        if (index >= 0 && index < nums.size())
         {
-            result.push_back(i);
+            nums[index] = -abs(nums[index]);
+        }
+    }
+    for (int i = 0; i < nums.size(); ++i)
+    {
+        if (nums[i] > 0)
+        {
+            result.push_back(i + 1);
         }
     }
     return result;

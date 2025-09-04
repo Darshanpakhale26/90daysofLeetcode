@@ -17,7 +17,7 @@ int searchInsert(vector<int>& nums, int target) {
 
 int main(){
     vector<int> nums = {1,3,5,6};
-    int target = 5;
+    int target = 2;
     int res = searchInsert(nums, target);
     cout<<res;
     return 0;
@@ -25,6 +25,6 @@ int main(){
 
 //----------------- Optimized Approach
 
-int searchInsert(vector<int>& nums, int target) {
-        return lower_bound(nums.begin(), nums.end(), target) - nums.begin();
-    }
+// int searchInsert(vector<int>& nums, int target) {
+//         return lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+//     }
